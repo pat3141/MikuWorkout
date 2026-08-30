@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miku's Training Plan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="controls">
+    <button class="pill-toggle" id="langBtn" type="button" aria-label="Switch language">
+      <span class="en">日本語</span><span class="ja">English</span>
+    </button>
+    <button class="pill-toggle" id="themeBtn" type="button" aria-label="Switch theme">
+      <span class="icon-dark">&#9789;</span><span class="icon-light">&#9788;</span>
+    </button>
+  </div>
+
+  <div class="quote">
+    <p class="quote-jp">継続は力なり</p>
+    <p class="quote-sub">Keizoku wa chikara nari &mdash; <span class="quote-en">&ldquo;Consistency is strength.&rdquo;</span></p>
+  </div>
+
+  <header class="top">
+    <div>
+      <h1><span class="en">Miku's Training Plan</span><span class="ja">ミクのトレーニングプラン</span></h1>
+      <p><span class="en">Four lift days built around your parkrun and long run &mdash; legs twice a week, full-body variety, plus skipping and dead hangs worked in throughout.</span><span class="ja">パークランと週半ばのロングランを軸にした、週4回の筋トレプラン。脚のトレーニングを週2回、全身をバランスよく鍛え、縄跳びとデッドハングも取り入れています。</span></p>
+    </div>
+    <button class="reset-btn" id="resetBtn" type="button"><span class="en">Reset week</span><span class="ja">今週をリセット</span></button>
+  </header>
+
+  <div class="week-strip">
+    <div class="day-pill lower">
+      <div class="d"><span class="en">Mon</span><span class="ja">月曜日</span></div>
+      <div class="t"><span class="en">Lower A</span><span class="ja">下半身A</span></div>
+    </div>
+    <div class="day-pill upper">
+      <div class="d"><span class="en">Tue</span><span class="ja">火曜日</span></div>
+      <div class="t"><span class="en">Upper A</span><span class="ja">上半身A</span></div>
+    </div>
+    <div class="day-pill run">
+      <div class="d"><span class="en">Wed</span><span class="ja">水曜日</span></div>
+      <div class="t"><span class="en">Long Run</span><span class="ja">ロングラン</span></div>
+    </div>
+    <div class="day-pill lower">
+      <div class="d"><span class="en">Thu</span><span class="ja">木曜日</span></div>
+      <div class="t"><span class="en">Lower B</span><span class="ja">下半身B</span></div>
+    </div>
+    <div class="day-pill upper">
+      <div class="d"><span class="en">Fri</span><span class="ja">金曜日</span></div>
+      <div class="t"><span class="en">Upper B</span><span class="ja">上半身B</span></div>
+    </div>
+    <div class="day-pill run">
+      <div class="d"><span class="en">Sat</span><span class="ja">土曜日</span></div>
+      <div class="t"><span class="en">Parkrun</span><span class="ja">パークラン</span></div>
+    </div>
+    <div class="day-pill rest">
+      <div class="d"><span class="en">Sun</span><span class="ja">日曜日</span></div>
+      <div class="t"><span class="en">Rest / Bonus</span><span class="ja">休養/ボーナス</span></div>
+    </div>
+  </div>
+
+  <section class="day lower" data-day="lowerA">
+    <div class="day-head">
+      <h2><span class="en">Lower Body A</span><span class="ja">下半身 A</span></h2>
+      <span class="tag"><span class="en">Monday &middot; Strength &middot; 50&ndash;60 min</span><span class="ja">月曜日・筋力強化・50〜60分</span></span>
+    </div>
+    <p class="day-sub"><span class="en">Warm-up: 5 min easy bike or row, then 2 min light skipping + walking lunges and hip circles.</span><span class="ja">ウォームアップ: バイクかローイングを5分、その後縄跳びを2分軽く+ウォーキングランジとヒップサークル。</span></p>
+    <table>
+      <thead><tr>
+        <th class="chk-cell"></th>
+        <th class="thumb-cell"></th>
+        <th><span class="en">Exercise</span><span class="ja">種目</span></th>
+        <th><span class="en">Sets &times; Reps</span><span class="ja">セット&times;回数</span></th>
+        <th><span class="en">Rest</span><span class="ja">休憩</span></th>
+        <th><span class="en">Notes</span><span class="ja">メモ</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Goblet_Squat_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Goblet_Squat_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Goblet squat (dumbbell)</span><span class="ja">ゴブレットスクワット（ダンベル）</span></td>
+          <td class="setsreps num"><span class="en">4 &times; 8&ndash;10</span><span class="ja">4セット &times; 8〜10回</span></td>
+          <td class="num"><span class="en">90s</span><span class="ja">90秒</span></td>
+          <td class="note"><span class="en">Chase depth and control before adding load</span><span class="ja">重量を上げる前に、深さとコントロールを優先</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Romanian_Deadlift_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Romanian_Deadlift_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Dumbbell Romanian deadlift</span><span class="ja">ダンベル・ルーマニアンデッドリフト</span></td>
+          <td class="setsreps num"><span class="en">4 &times; 10&ndash;12</span><span class="ja">4セット &times; 10〜12回</span></td>
+          <td class="num"><span class="en">90s</span><span class="ja">90秒</span></td>
+          <td class="note"><span class="en">Soft knees, push hips back, feel hamstrings stretch</span><span class="ja">膝は軽く曲げ、お尻を後ろに引いてハムストリングスを伸ばす</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Bodyweight_Walking_Lunge_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Bodyweight_Walking_Lunge_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Walking lunges (dumbbells)</span><span class="ja">ウォーキングランジ（ダンベル）</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 12/leg</span><span class="ja">3セット &times; 片脚12回</span></td>
+          <td class="num"><span class="en">60s</span><span class="ja">60秒</span></td>
+          <td class="note"><span class="en">Long stride, back knee grazes floor</span><span class="ja">歩幅を大きく、後ろ膝は床すれすれまで</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Leg_Press_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Leg_Press_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Leg press</span><span class="ja">レッグプレス</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 12&ndash;15</span><span class="ja">3セット &times; 12〜15回</span></td>
+          <td class="num"><span class="en">75s</span><span class="ja">75秒</span></td>
+          <td class="note"><span class="en">Feet mid-platform for balanced quad/glute work</span><span class="ja">足はプレートの中央に置き、大腿四頭筋とお尻に均等に効かせる</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Seated_Leg_Curl_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Seated_Leg_Curl_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Seated leg curl</span><span class="ja">シーテッドレッグカール</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 12&ndash;15</span><span class="ja">3セット &times; 12〜15回</span></td>
+          <td class="num"><span class="en">60s</span><span class="ja">60秒</span></td>
+          <td class="note"><span class="en">Slow on the way back &mdash; 3 second lower</span><span class="ja">戻す動作はゆっくり、3秒かけて下ろす</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Standing_Calf_Raises_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Standing_Calf_Raises_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Standing calf raise</span><span class="ja">スタンディングカーフレイズ</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 15&ndash;20</span><span class="ja">3セット &times; 15〜20回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Pause at the top</span><span class="ja">トップで一瞬止める</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Hanging_Leg_Raise_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Hanging knee raise</span><span class="ja">ハンギングニーレイズ</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12</span><span class="ja">3セット &times; 10〜12回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Swap for plank (3 &times; 30s) if grip fatigues first</span><span class="ja">握力が先に限界になる場合はプランク（3×30秒）に置き換え</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <div class="thumb thumb-hold"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></div>
+      <div>
+        <span class="label"><span class="en">Specialty move &middot; dead hang</span><span class="ja">注目の種目・デッドハング</span></span>
+        <p><span class="en">Finish with <b>3 rounds of a dead hang, 20&ndash;40 seconds each</b>, resting a minute between. Shoulders relaxed and slightly engaged (not shrugged to your ears). This is loosening up your lats and grip after all the leg work &mdash; it doesn't need to be exhausting.</span><span class="ja">仕上げに<b>デッドハングを3セット（各20〜40秒）</b>、セット間は1分休憩します。肩はすくめず、軽く締めた状態をキープ。脚のトレーニングのあとに広背筋と握力をほぐすための種目なので、無理に追い込まなくて大丈夫です。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="day upper" data-day="upperA">
+    <div class="day-head">
+      <h2><span class="en">Upper Body A</span><span class="ja">上半身 A</span></h2>
+      <span class="tag"><span class="en">Tuesday &middot; Push &middot; 45&ndash;55 min</span><span class="ja">火曜日・プッシュ・45〜55分</span></span>
+    </div>
+    <p class="day-sub"><span class="en">Warm-up: 5 min skipping (easy pace) + band pull-aparts and arm circles.</span><span class="ja">ウォームアップ: 縄跳びを5分（ゆっくり）+バンドプルアパートと腕回し。</span></p>
+    <table>
+      <thead><tr>
+        <th class="chk-cell"></th>
+        <th class="thumb-cell"></th>
+        <th><span class="en">Exercise</span><span class="ja">種目</span></th>
+        <th><span class="en">Sets &times; Reps</span><span class="ja">セット&times;回数</span></th>
+        <th><span class="en">Rest</span><span class="ja">休憩</span></th>
+        <th><span class="en">Notes</span><span class="ja">メモ</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Dumbbell_Bench_Press_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Dumbbell_Bench_Press_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Flat dumbbell bench press</span><span class="ja">フラットダンベルベンチプレス</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12</span><span class="ja">3セット &times; 10〜12回</span></td>
+          <td class="num"><span class="en">90s</span><span class="ja">90秒</span></td>
+          <td class="note"><span class="en">Bar path in a slight arc, elbows ~45&deg;</span><span class="ja">軌道はやや弧を描くように、肘の角度は約45度</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Dumbbell_Shoulder_Press_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Dumbbell_Shoulder_Press_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Seated dumbbell shoulder press</span><span class="ja">シーテッドダンベルショルダープレス</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12</span><span class="ja">3セット &times; 10〜12回</span></td>
+          <td class="num"><span class="en">75s</span><span class="ja">75秒</span></td>
+          <td class="note"><span class="en">Ribs down, don't overarch the back</span><span class="ja">肋骨を締めて、腰を反りすぎない</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Leverage_Incline_Chest_Press_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Leverage_Incline_Chest_Press_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Incline machine chest press</span><span class="ja">インクラインマシンチェストプレス</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12</span><span class="ja">3セット &times; 10〜12回</span></td>
+          <td class="num"><span class="en">75s</span><span class="ja">75秒</span></td>
+          <td class="note"><span class="en">Targets upper chest &mdash; pairs with flat press</span><span class="ja">胸上部を狙う種目。フラットプレスと組み合わせる</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Cable_Seated_Lateral_Raise_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Cable_Seated_Lateral_Raise_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Cable lateral raise</span><span class="ja">ケーブルラテラルレイズ</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 12&ndash;15</span><span class="ja">3セット &times; 12〜15回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Lead with elbows, stop at shoulder height</span><span class="ja">肘から動かし、肩の高さで止める</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Triceps_Pushdown_-_Rope_Attachment_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Triceps_Pushdown_-_Rope_Attachment_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Triceps rope pushdown</span><span class="ja">ケーブルトライセプスプッシュダウン（ロープ）</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 12&ndash;15</span><span class="ja">3セット &times; 12〜15回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Elbows pinned to your sides</span><span class="ja">肘を体側に固定する</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb thumb-hold"><img src="assets/exercises/Plank_0.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Plank</span><span class="ja">プランク</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 30&ndash;40s</span><span class="ja">3セット &times; 30〜40秒</span></td>
+          <td class="num"><span class="en">30s</span><span class="ja">30秒</span></td>
+          <td class="note"><span class="en">Brace the core, don't let hips sag</span><span class="ja">体幹を締めて、腰が落ちないように</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb thumb-hold"><img src="assets/exercises/Push_Up_to_Side_Plank_0.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Side plank</span><span class="ja">サイドプランク</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 30&ndash;40s</span><span class="ja">3セット &times; 30〜40秒</span></td>
+          <td class="num"><span class="en">30s</span><span class="ja">30秒</span></td>
+          <td class="note"><span class="en">Stack hips and shoulders, keep hips lifted</span><span class="ja">肩と腰を一直線に、腰を落とさない</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+  <section class="day run" data-day="run1">
+    <div class="day-head">
+      <h2><span class="en">Midweek Long Run</span><span class="ja">週半ばのロングラン</span></h2>
+      <span class="tag"><span class="en">Wednesday &middot; Running</span><span class="ja">水曜日・ランニング</span></span>
+    </div>
+    <p class="run-body"><span class="en">This is your longer steady run &mdash; <b>keep it conversational pace</b>, not a race effort. It's doing the aerobic-base job the gym days aren't. No lifting today; a 5-minute walk and light stretching afterwards is plenty. Skip this if legs are still trashed from Thursday's session and swap in an easy walk instead &mdash; one missed long run won't undo anything.</span><span class="ja">今週でいちばん長く走る日です。<b>会話ができるくらいのペース</b>を守り、レース気分で追い込まないこと。ジムの日では鍛えられない有酸素の土台づくりが目的です。今日は筋トレなし。走った後は5分のウォーキングと軽いストレッチで十分。前日の疲労で脚が回復していなければ、無理せず軽いウォーキングに置き換えてOK。1回休んでも、これまでの成果がなくなることはありません。</span></p>
+  </section>
+
+  <section class="day lower" data-day="lowerB">
+    <div class="day-head">
+      <h2><span class="en">Lower Body B</span><span class="ja">下半身 B</span></h2>
+      <span class="tag"><span class="en">Thursday &middot; Glutes &amp; Shape &middot; 50&ndash;60 min</span><span class="ja">木曜日・ヒップ&amp;ボディメイク・50〜60分</span></span>
+    </div>
+    <p class="day-sub"><span class="en">Warm-up: 5 min skipping + banded lateral walks to switch glutes on.</span><span class="ja">ウォームアップ: 縄跳びを5分+バンドラテラルウォークでお尻を目覚めさせる。</span></p>
+    <table>
+      <thead><tr>
+        <th class="chk-cell"></th>
+        <th class="thumb-cell"></th>
+        <th><span class="en">Exercise</span><span class="ja">種目</span></th>
+        <th><span class="en">Sets &times; Reps</span><span class="ja">セット&times;回数</span></th>
+        <th><span class="en">Rest</span><span class="ja">休憩</span></th>
+        <th><span class="en">Notes</span><span class="ja">メモ</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Barbell_Hip_Thrust_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Barbell_Hip_Thrust_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Barbell hip thrust</span><span class="ja">バーベルヒップスラスト</span></td>
+          <td class="setsreps num"><span class="en">4 &times; 12&ndash;15</span><span class="ja">4セット &times; 12〜15回</span></td>
+          <td class="num"><span class="en">90s</span><span class="ja">90秒</span></td>
+          <td class="note"><span class="en">Pad on the hips, chin tucked, squeeze glutes at the top</span><span class="ja">パッドを腰に当て、あごを引き、トップでお尻をしっかり締める</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Split_Squat_with_Dumbbells_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Split_Squat_with_Dumbbells_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Bulgarian split squat (dumbbells)</span><span class="ja">ブルガリアンスプリットスクワット（ダンベル）</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12/leg</span><span class="ja">3セット &times; 片脚10〜12回</span></td>
+          <td class="num"><span class="en">75s</span><span class="ja">75秒</span></td>
+          <td class="note"><span class="en">Back foot on bench, torso stays upright</span><span class="ja">後ろ足をベンチに乗せ、上体はまっすぐに保つ</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Glute_Kickback_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Glute_Kickback_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Cable glute kickback</span><span class="ja">ケーブルグルートキックバック</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 15/leg</span><span class="ja">3セット &times; 片脚15回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Small controlled range, don't swing</span><span class="ja">反動を使わず、小さく丁寧に動かす</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Thigh_Abductor_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Thigh_Abductor_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Hip abduction machine</span><span class="ja">ヒップアブダクションマシン</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 15&ndash;20</span><span class="ja">3セット &times; 15〜20回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Lean slightly forward to bias glute medius</span><span class="ja">やや前傾すると中臀筋に効きやすい</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Dumbbell_Step_Ups_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Dumbbell_Step_Ups_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Dumbbell step-ups</span><span class="ja">ダンベルステップアップ</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10/leg</span><span class="ja">3セット &times; 片脚10回</span></td>
+          <td class="num"><span class="en">60s</span><span class="ja">60秒</span></td>
+          <td class="note"><span class="en">Drive through the heel of the top foot</span><span class="ja">上に乗せた足のかかとで踏み込む</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <div class="thumb thumb-empty" aria-hidden="true"></div>
+      <div>
+        <span class="label"><span class="en">Specialty move &middot; skipping finisher</span><span class="ja">注目の種目・仕上げの縄跳び</span></span>
+        <p><span class="en">Close with <b>6 rounds of 30 seconds skipping / 30 seconds rest</b>. Alternate basic bounce and high-knees each round for variety &mdash; it's a nice change of pace from lifting and adds a real conditioning hit on top of the leg volume.</span><span class="ja">仕上げに<b>縄跳びを30秒×休憩30秒を6セット</b>。基本の跳び方とハイニーを交互に行うと変化がついて楽しめます。筋トレとは違うリズムで、脚の種目に有酸素の刺激をプラスできます。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="day upper" data-day="upperB">
+    <div class="day-head">
+      <h2><span class="en">Upper Body B</span><span class="ja">上半身 B</span></h2>
+      <span class="tag"><span class="en">Friday &middot; Pull &middot; 45&ndash;55 min</span><span class="ja">金曜日・プル・45〜55分</span></span>
+    </div>
+    <p class="day-sub"><span class="en">Warm-up: 5 min row or skip + scapular pulls hanging from the bar.</span><span class="ja">ウォームアップ: ローイングか縄跳びを5分+バーにぶら下がってのスキャプラプル。</span></p>
+    <table>
+      <thead><tr>
+        <th class="chk-cell"></th>
+        <th class="thumb-cell"></th>
+        <th><span class="en">Exercise</span><span class="ja">種目</span></th>
+        <th><span class="en">Sets &times; Reps</span><span class="ja">セット&times;回数</span></th>
+        <th><span class="en">Rest</span><span class="ja">休憩</span></th>
+        <th><span class="en">Notes</span><span class="ja">メモ</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Wide-Grip_Lat_Pulldown_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Wide-Grip_Lat_Pulldown_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Lat pulldown</span><span class="ja">ラットプルダウン</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12</span><span class="ja">3セット &times; 10〜12回</span></td>
+          <td class="num"><span class="en">90s</span><span class="ja">90秒</span></td>
+          <td class="note"><span class="en">Pull to upper chest, chest proud</span><span class="ja">胸の上部に引き、胸を張る</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Seated_Cable_Rows_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Seated_Cable_Rows_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Seated cable row</span><span class="ja">シーテッドケーブルロー</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12</span><span class="ja">3セット &times; 10〜12回</span></td>
+          <td class="num"><span class="en">75s</span><span class="ja">75秒</span></td>
+          <td class="note"><span class="en">Squeeze shoulder blades, don't lean back excessively</span><span class="ja">肩甲骨を寄せる。後ろに反りすぎない</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/One-Arm_Dumbbell_Row_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/One-Arm_Dumbbell_Row_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Single-arm dumbbell row</span><span class="ja">シングルアームダンベルロー</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;12/side</span><span class="ja">3セット &times; 片側10〜12回</span></td>
+          <td class="num"><span class="en">60s</span><span class="ja">60秒</span></td>
+          <td class="note"><span class="en">Flat back, pull elbow toward hip</span><span class="ja">背中をまっすぐに、肘を腰に引き寄せる</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Face_Pull_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Face_Pull_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Face pull</span><span class="ja">フェイスプル</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 15</span><span class="ja">3セット &times; 15回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Great for posture &mdash; pull to eye level</span><span class="ja">姿勢改善に効果的。目の高さまで引く</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Dumbbell_Bicep_Curl_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Dumbbell_Bicep_Curl_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Dumbbell bicep curl</span><span class="ja">ダンベルバイセップカール</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 12</span><span class="ja">3セット &times; 12回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">No swinging, full stretch at the bottom</span><span class="ja">反動を使わず、下でしっかり伸ばす</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Standing_Cable_Wood_Chop_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Standing_Cable_Wood_Chop_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Cable woodchopper</span><span class="ja">ケーブルウッドチョッパー</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 15/side</span><span class="ja">3セット &times; 片側15回</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">Rotate from the ribs, not just the arms</span><span class="ja">腕だけでなく、みぞおちから回旋する</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <div class="thumb thumb-hold"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></div>
+      <div>
+        <span class="label"><span class="en">Specialty move &middot; dead hang</span><span class="ja">注目の種目・デッドハング</span></span>
+        <p><span class="en">Finish with <b>4 rounds building toward a 40&ndash;60 second dead hang</b>. This is your main grip-and-shoulder-health day for it &mdash; over a few weeks the hang time should climb, which is the whole point. Chalk or straps are fine once grip becomes the limiter before your shoulders do.</span><span class="ja">仕上げに<b>デッドハングを4セット、40〜60秒を目標に</b>伸ばしていきます。この日がメインの握力・肩ケアの種目なので、数週間かけてぶら下がれる時間が伸びればOK。肩より先に握力がきつくなってきたら、チョークやストラップを使っても構いません。</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="day run" data-day="parkrun">
+    <div class="day-head">
+      <h2><span class="en">Parkrun</span><span class="ja">パークラン</span></h2>
+      <span class="tag"><span class="en">Saturday &middot; 5km</span><span class="ja">土曜日・5km</span></span>
+    </div>
+    <p class="run-body"><span class="en">Run it however you're feeling that week &mdash; easy, steady, or a push if legs are fresh. It doubles as your weekly benchmark; no need to chase a time every single week.</span><span class="ja">その週の調子に合わせて走ればOK。楽に、着実に、脚が元気なら少し追い込んでも構いません。毎週のタイムを更新しようと気負う必要はなく、週ごとの目安として使うくらいで十分です。</span></p>
+  </section>
+
+  <section class="day rest" data-day="bonus">
+    <div class="day-head">
+      <h2><span class="en">Rest / Bonus Day</span><span class="ja">休養日 / ボーナスデー</span></h2>
+      <span class="tag"><span class="en">Sunday &middot; Optional &middot; 30&ndash;40 min</span><span class="ja">日曜日・任意・30〜40分</span></span>
+    </div>
+    <p class="day-sub"><span class="en">Take this fully off most weeks. When you want a 5th session, run this light full-body conditioning circuit instead of a fifth heavy lift &mdash; it keeps the &ldquo;4&ndash;5 times a week&rdquo; without stacking fatigue on top of two run days.</span><span class="ja">ほとんどの週はしっかり休んでOKです。5回目のトレーニングをしたい週は、重い種目を追加するのではなく、この軽めの全身コンディショニングサーキットを。ランの日を2日抱えたまま疲労を溜めずに「週4〜5回」を実現できます。</span></p>
+    <table>
+      <thead><tr>
+        <th class="chk-cell"></th>
+        <th class="thumb-cell"></th>
+        <th><span class="en">Exercise</span><span class="ja">種目</span></th>
+        <th><span class="en">Sets &times; Reps</span><span class="ja">セット&times;回数</span></th>
+        <th><span class="en">Rest</span><span class="ja">休憩</span></th>
+        <th><span class="en">Notes</span><span class="ja">メモ</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/One-Arm_Kettlebell_Swings_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/One-Arm_Kettlebell_Swings_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Kettlebell swing</span><span class="ja">ケトルベルスイング</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 15</span><span class="ja">3セット &times; 15回</span></td>
+          <td class="num"><span class="en">30s</span><span class="ja">30秒</span></td>
+          <td class="note"><span class="en">Hip hinge, not a squat</span><span class="ja">スクワットではなくヒップヒンジの動き</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Goblet_Squat_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Goblet_Squat_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Goblet squat</span><span class="ja">ゴブレットスクワット</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 12</span><span class="ja">3セット &times; 12回</span></td>
+          <td class="num"><span class="en">30s</span><span class="ja">30秒</span></td>
+          <td class="note"><span class="en">Lighter than Monday &mdash; this is a shake-out</span><span class="ja">月曜日より軽めに。軽く体を動かす程度でOK</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb"><img class="f0" src="assets/exercises/Pushups_0.jpg" alt="" loading="lazy"><img class="f1" src="assets/exercises/Pushups_1.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Push-ups</span><span class="ja">プッシュアップ</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 10&ndash;15</span><span class="ja">3セット &times; 10〜15回</span></td>
+          <td class="num"><span class="en">30s</span><span class="ja">30秒</span></td>
+          <td class="note"><span class="en">Knees down is a full rep too</span><span class="ja">膝をついても1回としてカウントしてOK</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb thumb-empty" aria-hidden="true"></div></td>
+          <td class="ex"><span class="en">Skipping</span><span class="ja">縄跳び</span></td>
+          <td class="setsreps num"><span class="en">3 &times; 1 min</span><span class="ja">3セット &times; 1分</span></td>
+          <td class="num"><span class="en">30s</span><span class="ja">30秒</span></td>
+          <td class="note"><span class="en">Freestyle &mdash; mix footwork patterns</span><span class="ja">自由に、いろいろなステップを混ぜて</span></td>
+        </tr>
+        <tr>
+          <td class="chk-cell"><input type="checkbox" class="chk"></td>
+          <td class="thumb-cell"><div class="thumb thumb-hold"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></div></td>
+          <td class="ex"><span class="en">Dead hang</span><span class="ja">デッドハング</span></td>
+          <td class="setsreps num"><span class="en">3 &times; max</span><span class="ja">3セット &times; 限界まで</span></td>
+          <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
+          <td class="note"><span class="en">However long today has in it</span><span class="ja">今日出せる分だけでOK</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+  <div class="notes-section">
+    <h2><span class="en">Making it stick</span><span class="ja">続けるためのポイント</span></h2>
+    <div class="notes-grid">
+      <div class="note-card">
+        <h3><span class="en">Progression</span><span class="ja">重量の伸ばし方</span></h3>
+        <ul>
+          <li><span class="en">Weeks 1&ndash;2: light-moderate weight, nail the form on every lift before adding load.</span><span class="ja">最初の1〜2週間は軽め〜中程度の重量で、まずはすべての種目でフォームを固めましょう。</span></li>
+          <li><span class="en">Once every set hits the top of its rep range two sessions running, add a small jump &mdash; 1&ndash;2kg on dumbbells, 2.5&ndash;5kg on barbell/machine lifts.</span><span class="ja">2回連続のセッションで全セットが回数レンジの上限に届いたら、少しだけ重量を上げます。ダンベルなら1〜2kg、バーベル・マシンなら2.5〜5kgが目安です。</span></li>
+          <li><span class="en">Every 6&ndash;8 weeks, take one lighter &ldquo;deload&rdquo; week (cut sets by about a third) so joints and grip actually recover.</span><span class="ja">6〜8週間ごとに、セット数を3分の1ほど減らした軽めの「デロード週」を挟むと、関節や握力がしっかり回復します。</span></li>
+        </ul>
+      </div>
+      <div class="note-card">
+        <h3><span class="en">Diet &amp; recovery</span><span class="ja">食事と回復</span></h3>
+        <ul>
+          <li><span class="en">The lifting builds the shape; nutrition is what reveals it &mdash; protein at each meal matters more than any single exercise choice.</span><span class="ja">筋トレは体のかたちを作り、それを見せるのは食事です。どの種目を選ぶかより、毎食のタンパク質のほうが大切です。</span></li>
+          <li><span class="en">A &ldquo;toned, low body-fat&rdquo; look is a slight, sustained calorie deficit plus enough protein to hold onto the muscle this plan is building &mdash; not extra cardio on top of an already full week.</span><span class="ja">「引き締まって体脂肪の少ない」見た目は、軽めのカロリー不足を続けながら、このプランで作る筋肉を維持できるだけのタンパク質を摂ることで作られます。すでに予定が詰まった週に有酸素を追加する必要はありません。</span></li>
+          <li><span class="en">7&ndash;9 hours' sleep does more for visible progress here than anything added in the gym.</span><span class="ja">7〜9時間の睡眠は、ジムで何かを追加するよりも見た目の変化に効きます。</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><span class="en">Built around her Saturday parkrun and midweek long run &middot; adjust weights and rests to how the week actually feels</span><span class="ja">土曜日のパークランと週半ばのロングランを軸に構成 &middot; 重量や休憩はその週の調子に合わせて調整してください</span></p>
+    <p class="credit"><span class="en">Exercise reference photos: Free Exercise DB (public domain)</span><span class="ja">エクササイズ参考写真: Free Exercise DB（パブリックドメイン）</span></p>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
