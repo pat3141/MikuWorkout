@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Miku's Training Plan</title>
 <link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#f3f4ef" id="themeColorMeta">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Miku's Plan">
+<link rel="apple-touch-icon" href="assets/img/pat-head-icon.png">
+<link rel="icon" href="assets/img/pat-head-icon.png">
 </head>
 <body>
 <div class="wrap">
@@ -19,8 +26,8 @@
   </div>
 
   <div class="quote">
-    <p class="quote-jp">継続は力なり</p>
-    <p class="quote-sub">Keizoku wa chikara nari &mdash; <span class="quote-en">&ldquo;Consistency is strength.&rdquo;</span></p>
+    <p class="quote-jp" id="quoteJp">継続は力なり</p>
+    <p class="quote-sub"><span id="quoteRomaji">Keizoku wa chikara nari</span> &mdash; &ldquo;<span class="quote-en" id="quoteEnText">Consistency is strength.</span>&rdquo;</p>
   </div>
 
   <header class="top">
@@ -30,6 +37,23 @@
     </div>
     <button class="reset-btn" id="resetBtn" type="button"><span class="en">Reset week</span><span class="ja">今週をリセット</span></button>
   </header>
+
+  <div class="stats-strip">
+    <div class="stat-chip">
+      <span class="stat-chip-val" id="weekCount">0/5</span>
+      <span class="stat-chip-label"><span class="en">this week</span><span class="ja">今週</span></span>
+    </div>
+    <div class="stat-chip">
+      <span class="stat-chip-val" id="streakCount">0</span>
+      <span class="stat-chip-label"><span class="en">week streak &#128293;</span><span class="ja">週連続 &#128293;</span></span>
+    </div>
+  </div>
+
+  <div class="deload-banner" id="deloadBanner" hidden>
+    <span class="deload-icon">&#129411;</span>
+    <p><span class="en"><b>Deload week suggested.</b> It's been about 7 weeks &mdash; consider cutting sets by roughly a third this week so joints and grip actually recover.</span><span class="ja"><b>デロード週の目安です。</b>開始からおよそ7週間が経ちました。関節や握力をしっかり回復させるため、今週はセット数を3分の1ほど減らしてみましょう。</span></p>
+    <button class="deload-dismiss" id="deloadDismiss" type="button" aria-label="Dismiss">&times;</button>
+  </div>
 
   <div class="week-strip">
     <button class="day-pill lower" type="button" data-target="lowerA">
@@ -153,6 +177,17 @@
         <p><span class="en">Finish with <b>3 rounds of a dead hang, 20&ndash;40 seconds each</b>, resting a minute between. Shoulders relaxed and slightly engaged (not shrugged to your ears). This is loosening up your lats and grip after all the leg work &mdash; it doesn't need to be exhausting.</span><span class="ja">仕上げに<b>デッドハングを3セット（各20〜40秒）</b>、セット間は1分休憩します。肩はすくめず、軽く締めた状態をキープ。脚のトレーニングのあとに広背筋と握力をほぐすための種目なので、無理に追い込まなくて大丈夫です。</span></p>
       </div>
     </div>
+    <div class="mystery-card" data-day="lowerA">
+      <button class="mystery-toggle" type="button" aria-expanded="false">
+        <span class="mystery-icon">&#127922;</span>
+        <span class="mystery-label"><span class="en">Mystery Move &mdash; tap to reveal</span><span class="ja">ミステリー種目・タップして公開</span></span>
+      </button>
+      <div class="mystery-reveal" hidden>
+        <span class="mystery-name"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-sets num"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-note"><span class="en"></span><span class="ja"></span></span>
+      </div>
+    </div>
   </section>
 
   <section class="day upper" data-day="upperA">
@@ -239,6 +274,17 @@
         </tr>
       </tbody>
     </table>
+    <div class="mystery-card" data-day="upperA">
+      <button class="mystery-toggle" type="button" aria-expanded="false">
+        <span class="mystery-icon">&#127922;</span>
+        <span class="mystery-label"><span class="en">Mystery Move &mdash; tap to reveal</span><span class="ja">ミステリー種目・タップして公開</span></span>
+      </button>
+      <div class="mystery-reveal" hidden>
+        <span class="mystery-name"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-sets num"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-note"><span class="en"></span><span class="ja"></span></span>
+      </div>
+    </div>
 
   </section>
 
@@ -335,6 +381,17 @@
         <p><span class="en">Close with <b>6 rounds of 30 seconds skipping / 30 seconds rest</b>. Alternate basic bounce and high-knees each round for variety &mdash; it's a nice change of pace from lifting and adds a real conditioning hit on top of the leg volume.</span><span class="ja">仕上げに<b>縄跳びを30秒×休憩30秒を6セット</b>。基本の跳び方とハイニーを交互に行うと変化がついて楽しめます。筋トレとは違うリズムで、脚の種目に有酸素の刺激をプラスできます。</span></p>
       </div>
     </div>
+    <div class="mystery-card" data-day="lowerB">
+      <button class="mystery-toggle" type="button" aria-expanded="false">
+        <span class="mystery-icon">&#127922;</span>
+        <span class="mystery-label"><span class="en">Mystery Move &mdash; tap to reveal</span><span class="ja">ミステリー種目・タップして公開</span></span>
+      </button>
+      <div class="mystery-reveal" hidden>
+        <span class="mystery-name"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-sets num"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-note"><span class="en"></span><span class="ja"></span></span>
+      </div>
+    </div>
   </section>
 
   <section class="day upper" data-day="upperB">
@@ -418,6 +475,17 @@
       <div>
         <span class="label"><span class="en">Specialty move &middot; dead hang</span><span class="ja">注目の種目・デッドハング</span></span>
         <p><span class="en">Finish with <b>4 rounds building toward a 40&ndash;60 second dead hang</b>. This is your main grip-and-shoulder-health day for it &mdash; over a few weeks the hang time should climb, which is the whole point. Chalk or straps are fine once grip becomes the limiter before your shoulders do.</span><span class="ja">仕上げに<b>デッドハングを4セット、40〜60秒を目標に</b>伸ばしていきます。この日がメインの握力・肩ケアの種目なので、数週間かけてぶら下がれる時間が伸びればOK。肩より先に握力がきつくなってきたら、チョークやストラップを使っても構いません。</span></p>
+      </div>
+    </div>
+    <div class="mystery-card" data-day="upperB">
+      <button class="mystery-toggle" type="button" aria-expanded="false">
+        <span class="mystery-icon">&#127922;</span>
+        <span class="mystery-label"><span class="en">Mystery Move &mdash; tap to reveal</span><span class="ja">ミステリー種目・タップして公開</span></span>
+      </button>
+      <div class="mystery-reveal" hidden>
+        <span class="mystery-name"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-sets num"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-note"><span class="en"></span><span class="ja"></span></span>
       </div>
     </div>
   </section>
@@ -508,6 +576,17 @@
         </tr>
       </tbody>
     </table>
+    <div class="mystery-card" data-day="bonus">
+      <button class="mystery-toggle" type="button" aria-expanded="false">
+        <span class="mystery-icon">&#127922;</span>
+        <span class="mystery-label"><span class="en">Mystery Move &mdash; tap to reveal</span><span class="ja">ミステリー種目・タップして公開</span></span>
+      </button>
+      <div class="mystery-reveal" hidden>
+        <span class="mystery-name"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-sets num"><span class="en"></span><span class="ja"></span></span>
+        <span class="mystery-note"><span class="en"></span><span class="ja"></span></span>
+      </div>
+    </div>
 
   </section>
 
@@ -539,6 +618,83 @@
   </footer>
 
 </div>
+
+<div class="ex-overlay" id="exOverlay" hidden>
+  <div class="ex-panel">
+    <button class="ex-back" id="exBack" type="button">
+      <span aria-hidden="true">&larr;</span>
+      <span class="en">Back</span><span class="ja">戻る</span>
+    </button>
+
+    <div class="ex-hero">
+      <div class="thumb ex-hero-thumb" id="exThumb"><img class="f0" alt=""><img class="f1" alt=""></div>
+      <div class="ex-hero-text">
+        <span class="ex-day-tag" id="exDayTag"></span>
+        <h2 id="exName"></h2>
+        <div class="ex-stats">
+          <span class="ex-stat"><span class="ex-stat-label"><span class="en">Sets &times; Reps</span><span class="ja">セット&times;回数</span></span><span class="ex-stat-val" id="exSetsReps"></span></span>
+          <span class="ex-stat"><span class="ex-stat-label"><span class="en">Rest</span><span class="ja">休憩</span></span><span class="ex-stat-val" id="exRest"></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ex-section">
+      <h3><span class="en">Form cue</span><span class="ja">フォームのポイント</span></h3>
+      <p id="exNote"></p>
+    </div>
+
+    <div class="ex-section">
+      <h3><span class="en">Muscles worked</span><span class="ja">使う筋肉</span></h3>
+      <div class="ex-muscle-row">
+        <div class="ex-diagram">
+          <svg viewBox="0 0 100 150" aria-hidden="true" data-view="front">
+            <circle class="mr-deco" cx="50" cy="12" r="8"></circle>
+            <rect class="mr-deco" x="46" y="19" width="8" height="5"></rect>
+            <ellipse class="mr-region" data-region="shoulders" cx="28" cy="28" rx="8" ry="6"></ellipse>
+            <ellipse class="mr-region" data-region="shoulders" cx="72" cy="28" rx="8" ry="6"></ellipse>
+            <rect class="mr-region" data-region="chest" x="37" y="24" width="26" height="17" rx="4"></rect>
+            <rect class="mr-region" data-region="abs" x="40" y="42" width="20" height="21" rx="3"></rect>
+            <rect class="mr-region" data-region="obliques" x="31" y="43" width="7" height="19" rx="2"></rect>
+            <rect class="mr-region" data-region="obliques" x="62" y="43" width="7" height="19" rx="2"></rect>
+            <rect class="mr-region" data-region="biceps" x="15" y="28" width="8" height="19" rx="3"></rect>
+            <rect class="mr-region" data-region="biceps" x="77" y="28" width="8" height="19" rx="3"></rect>
+            <rect class="mr-region" data-region="forearms" x="13" y="48" width="7" height="17" rx="3"></rect>
+            <rect class="mr-region" data-region="forearms" x="80" y="48" width="7" height="17" rx="3"></rect>
+            <rect class="mr-region" data-region="quads" x="38" y="65" width="10" height="27" rx="3"></rect>
+            <rect class="mr-region" data-region="quads" x="52" y="65" width="10" height="27" rx="3"></rect>
+            <rect class="mr-region" data-region="calves" x="38" y="96" width="9" height="24" rx="3"></rect>
+            <rect class="mr-region" data-region="calves" x="53" y="96" width="9" height="24" rx="3"></rect>
+          </svg>
+          <span class="ex-diagram-label"><span class="en">Front</span><span class="ja">前面</span></span>
+        </div>
+        <div class="ex-diagram">
+          <svg viewBox="0 0 100 150" aria-hidden="true" data-view="back">
+            <circle class="mr-deco" cx="50" cy="12" r="8"></circle>
+            <rect class="mr-deco" x="46" y="19" width="8" height="5"></rect>
+            <rect class="mr-region" data-region="traps" x="41" y="21" width="18" height="8" rx="3"></rect>
+            <rect class="mr-region" data-region="lats" x="35" y="29" width="30" height="18" rx="4"></rect>
+            <rect class="mr-region" data-region="lower-back" x="41" y="47" width="18" height="11" rx="3"></rect>
+            <rect class="mr-region" data-region="triceps" x="15" y="28" width="8" height="19" rx="3"></rect>
+            <rect class="mr-region" data-region="triceps" x="77" y="28" width="8" height="19" rx="3"></rect>
+            <rect class="mr-region" data-region="forearms" x="13" y="48" width="7" height="17" rx="3"></rect>
+            <rect class="mr-region" data-region="forearms" x="80" y="48" width="7" height="17" rx="3"></rect>
+            <rect class="mr-region" data-region="glutes" x="36" y="58" width="28" height="13" rx="6"></rect>
+            <rect class="mr-region" data-region="hamstrings" x="38" y="71" width="10" height="24" rx="3"></rect>
+            <rect class="mr-region" data-region="hamstrings" x="52" y="71" width="10" height="24" rx="3"></rect>
+            <rect class="mr-region" data-region="calves" x="38" y="96" width="9" height="24" rx="3"></rect>
+            <rect class="mr-region" data-region="calves" x="53" y="96" width="9" height="24" rx="3"></rect>
+          </svg>
+          <span class="ex-diagram-label"><span class="en">Back</span><span class="ja">背面</span></span>
+        </div>
+      </div>
+      <div class="ex-muscle-legend">
+        <p><span class="legend-dot legend-primary"></span><span class="en">Primary: </span><span class="ja">主働筋: </span><span id="exMusclePrimary"></span></p>
+        <p><span class="legend-dot legend-secondary"></span><span class="en">Secondary: </span><span class="ja">補助筋: </span><span id="exMuscleSecondary"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
