@@ -45,7 +45,7 @@ body{
 .wrap{
   max-width:760px;
   margin:0 auto;
-  padding:28px 20px 80px;
+  padding:64px 20px 80px;
 }
 h1,h2,h3{
   font-family:'Big Shoulders Display','Noto Sans JP', system-ui, sans-serif;
@@ -64,10 +64,14 @@ html[data-lang="ja"] body{font-family:'Noto Sans JP','Inter',system-ui,sans-seri
 
 /* --- top controls (lang + theme) --- */
 .controls{
+  position:fixed;
+  top:14px;
+  right:14px;
+  z-index:500;
   display:flex;
   justify-content:flex-end;
   gap:8px;
-  margin-bottom:14px;
+  margin-bottom:0;
 }
 .pill-toggle{
   font-family:'Inter',sans-serif;
@@ -151,13 +155,52 @@ html[data-lang="ja"] .reset-btn{letter-spacing:0.03em;}
   text-align:center;
   background:var(--rest-soft);
   border:1px solid var(--line);
+  font-family:inherit;
+  cursor:pointer;
+  transition:transform 0.15s ease, box-shadow 0.15s ease;
 }
+.day-pill:hover{transform:translateY(-2px); box-shadow:var(--shadow);}
+.day-pill:active{transform:translateY(0);}
+.day-pill:focus-visible{outline:2px solid var(--upper); outline-offset:2px;}
 .day-pill .d{font-size:0.62rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.04em;}
 .day-pill .t{font-family:'Big Shoulders Display','Noto Sans JP'; font-weight:800; font-size:0.86rem; margin-top:2px; line-height:1.1;}
 .day-pill.lower{background:var(--lower-soft); color:var(--lower);}
 .day-pill.upper{background:var(--upper-soft); color:var(--upper);}
 .day-pill.run{background:var(--run-soft); color:var(--run);}
 .day-pill.lower .d, .day-pill.upper .d, .day-pill.run .d{color:inherit; opacity:0.75;}
+
+/* --- jump-to-day highlight flash --- */
+section.day{scroll-margin-top:16px;}
+section.day.flash{animation:dayFlash 1.1s ease;}
+@keyframes dayFlash{
+  0%{box-shadow:0 0 0 3px var(--upper), var(--shadow);}
+  100%{box-shadow:var(--shadow);}
+}
+
+/* --- checkbox celebration: pat flies across the page --- */
+.flying-pat{
+  position:fixed;
+  top:var(--fly-top, 30%);
+  left:-70px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:cover;
+  z-index:999;
+  pointer-events:none;
+  box-shadow:0 4px 14px rgba(0,0,0,0.3), 0 0 0 3px var(--paper-raised);
+  animation:flyAcross 1.5s cubic-bezier(.22,.68,.32,1) forwards;
+}
+@keyframes flyAcross{
+  0%{transform:translate(0,0) rotate(-12deg) scale(0.7); opacity:0;}
+  10%{opacity:1; transform:translate(10vw,-6px) rotate(-4deg) scale(1);}
+  50%{transform:translate(50vw,-46px) rotate(10deg) scale(1);}
+  90%{opacity:1;}
+  100%{transform:translate(calc(100vw + 70px),0) rotate(-6deg) scale(1); opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){
+  .flying-pat{animation:none; display:none;}
+}
 
 section.day{
   background:var(--paper-raised);
@@ -178,6 +221,59 @@ section.day.run{border-left-color:var(--run);}
 }
 .day-head h2{font-size:1.4rem;}
 .day-sub{color:var(--ink-soft); font-size:0.88rem; margin:10px 0 14px;}
+
+/* --- workout tracker (start button + live stats) --- */
+.workout-tracker{margin:14px 0;}
+.start-btn{
+  font-family:'Inter',sans-serif;
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:0.02em;
+  background:var(--ink);
+  color:var(--paper);
+  border:none;
+  padding:9px 16px;
+  border-radius:100px;
+  cursor:pointer;
+}
+.start-btn:hover{opacity:0.88;}
+.start-btn:focus-visible{outline:2px solid var(--upper); outline-offset:2px;}
+.tracker-stats{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:14px 22px;
+  padding:12px 16px;
+  background:var(--rest-soft);
+  border-radius:10px;
+}
+.tracker-stats .stat{display:flex; flex-direction:column; gap:1px;}
+.tracker-stats .stat-label{
+  font-family:'IBM Plex Mono','Noto Sans JP'; font-size:0.64rem; text-transform:uppercase; letter-spacing:0.06em;
+  color:var(--ink-soft);
+}
+.tracker-stats .stat-val{
+  font-family:'IBM Plex Mono', ui-monospace, monospace;
+  font-size:1.05rem;
+  font-weight:600;
+  font-variant-numeric:tabular-nums;
+  color:var(--ink);
+}
+.tracker-done-label{font-weight:700; color:var(--run); font-size:0.9rem;}
+.tracker-stats .stop-btn{
+  font-family:'Inter',sans-serif;
+  font-size:0.72rem;
+  font-weight:600;
+  background:none;
+  border:1.5px solid var(--line);
+  color:var(--ink-soft);
+  padding:6px 12px;
+  border-radius:100px;
+  cursor:pointer;
+  margin-left:auto;
+}
+.tracker-stats .stop-btn:hover{border-color:var(--ink); color:var(--ink);}
+.tracker-stats.done-state{background:var(--run-soft);}
 
 table{width:100%; border-collapse:collapse; font-size:0.92rem;}
 th{

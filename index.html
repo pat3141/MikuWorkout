@@ -32,40 +32,50 @@
   </header>
 
   <div class="week-strip">
-    <div class="day-pill lower">
+    <button class="day-pill lower" type="button" data-target="lowerA">
       <div class="d"><span class="en">Mon</span><span class="ja">月曜日</span></div>
       <div class="t"><span class="en">Lower A</span><span class="ja">下半身A</span></div>
-    </div>
-    <div class="day-pill upper">
+    </button>
+    <button class="day-pill upper" type="button" data-target="upperA">
       <div class="d"><span class="en">Tue</span><span class="ja">火曜日</span></div>
       <div class="t"><span class="en">Upper A</span><span class="ja">上半身A</span></div>
-    </div>
-    <div class="day-pill run">
+    </button>
+    <button class="day-pill run" type="button" data-target="run1">
       <div class="d"><span class="en">Wed</span><span class="ja">水曜日</span></div>
       <div class="t"><span class="en">Long Run</span><span class="ja">ロングラン</span></div>
-    </div>
-    <div class="day-pill lower">
+    </button>
+    <button class="day-pill lower" type="button" data-target="lowerB">
       <div class="d"><span class="en">Thu</span><span class="ja">木曜日</span></div>
       <div class="t"><span class="en">Lower B</span><span class="ja">下半身B</span></div>
-    </div>
-    <div class="day-pill upper">
+    </button>
+    <button class="day-pill upper" type="button" data-target="upperB">
       <div class="d"><span class="en">Fri</span><span class="ja">金曜日</span></div>
       <div class="t"><span class="en">Upper B</span><span class="ja">上半身B</span></div>
-    </div>
-    <div class="day-pill run">
+    </button>
+    <button class="day-pill run" type="button" data-target="parkrun">
       <div class="d"><span class="en">Sat</span><span class="ja">土曜日</span></div>
       <div class="t"><span class="en">Parkrun</span><span class="ja">パークラン</span></div>
-    </div>
-    <div class="day-pill rest">
+    </button>
+    <button class="day-pill rest" type="button" data-target="bonus">
       <div class="d"><span class="en">Sun</span><span class="ja">日曜日</span></div>
       <div class="t"><span class="en">Rest / Bonus</span><span class="ja">休養/ボーナス</span></div>
-    </div>
+    </button>
   </div>
 
   <section class="day lower" data-day="lowerA">
     <div class="day-head">
       <h2><span class="en">Lower Body A</span><span class="ja">下半身 A</span></h2>
       <span class="tag"><span class="en">Monday &middot; Strength &middot; 50&ndash;60 min</span><span class="ja">月曜日・筋力強化・50〜60分</span></span>
+    </div>
+    <div class="workout-tracker" data-day="lowerA" data-est-min="55">
+      <button class="start-btn" type="button"><span class="en">Start Workout</span><span class="ja">ワークアウト開始</span></button>
+      <div class="tracker-stats" hidden>
+        <div class="stat"><span class="stat-label"><span class="en">Elapsed</span><span class="ja">経過時間</span></span><span class="stat-val elapsed">0:00</span></div>
+        <div class="stat now-stat"><span class="stat-label"><span class="en">Now</span><span class="ja">現在時刻</span></span><span class="stat-val now">--:--</span></div>
+        <div class="stat est-finish-stat" hidden><span class="stat-label"><span class="en">On track to finish</span><span class="ja">終了予定</span></span><span class="stat-val est-finish">--:--</span></div>
+        <span class="tracker-done-label" hidden><span class="en">Nice work &mdash; workout complete!</span><span class="ja">お疲れさまでした！ワークアウト完了</span></span>
+        <button class="stop-btn" type="button"><span class="en">Reset</span><span class="ja">リセット</span></button>
+      </div>
     </div>
     <p class="day-sub"><span class="en">Warm-up: 5 min easy bike or row, then 2 min light skipping + walking lunges and hip circles.</span><span class="ja">ウォームアップ: バイクかローイングを5分、その後縄跳びを2分軽く+ウォーキングランジとヒップサークル。</span></p>
     <table>
@@ -150,6 +160,16 @@
       <h2><span class="en">Upper Body A</span><span class="ja">上半身 A</span></h2>
       <span class="tag"><span class="en">Tuesday &middot; Push &middot; 45&ndash;55 min</span><span class="ja">火曜日・プッシュ・45〜55分</span></span>
     </div>
+    <div class="workout-tracker" data-day="upperA" data-est-min="50">
+      <button class="start-btn" type="button"><span class="en">Start Workout</span><span class="ja">ワークアウト開始</span></button>
+      <div class="tracker-stats" hidden>
+        <div class="stat"><span class="stat-label"><span class="en">Elapsed</span><span class="ja">経過時間</span></span><span class="stat-val elapsed">0:00</span></div>
+        <div class="stat now-stat"><span class="stat-label"><span class="en">Now</span><span class="ja">現在時刻</span></span><span class="stat-val now">--:--</span></div>
+        <div class="stat est-finish-stat" hidden><span class="stat-label"><span class="en">On track to finish</span><span class="ja">終了予定</span></span><span class="stat-val est-finish">--:--</span></div>
+        <span class="tracker-done-label" hidden><span class="en">Nice work &mdash; workout complete!</span><span class="ja">お疲れさまでした！ワークアウト完了</span></span>
+        <button class="stop-btn" type="button"><span class="en">Reset</span><span class="ja">リセット</span></button>
+      </div>
+    </div>
     <p class="day-sub"><span class="en">Warm-up: 5 min skipping (easy pace) + band pull-aparts and arm circles.</span><span class="ja">ウォームアップ: 縄跳びを5分（ゆっくり）+バンドプルアパートと腕回し。</span></p>
     <table>
       <thead><tr>
@@ -227,6 +247,16 @@
       <h2><span class="en">Midweek Long Run</span><span class="ja">週半ばのロングラン</span></h2>
       <span class="tag"><span class="en">Wednesday &middot; Running</span><span class="ja">水曜日・ランニング</span></span>
     </div>
+    <div class="workout-tracker" data-day="run1">
+      <button class="start-btn" type="button"><span class="en">Start Workout</span><span class="ja">ワークアウト開始</span></button>
+      <div class="tracker-stats" hidden>
+        <div class="stat"><span class="stat-label"><span class="en">Elapsed</span><span class="ja">経過時間</span></span><span class="stat-val elapsed">0:00</span></div>
+        <div class="stat now-stat"><span class="stat-label"><span class="en">Now</span><span class="ja">現在時刻</span></span><span class="stat-val now">--:--</span></div>
+        <div class="stat est-finish-stat" hidden><span class="stat-label"><span class="en">On track to finish</span><span class="ja">終了予定</span></span><span class="stat-val est-finish">--:--</span></div>
+        <span class="tracker-done-label" hidden><span class="en">Nice work &mdash; workout complete!</span><span class="ja">お疲れさまでした！ワークアウト完了</span></span>
+        <button class="stop-btn" type="button"><span class="en">Reset</span><span class="ja">リセット</span></button>
+      </div>
+    </div>
     <p class="run-body"><span class="en">This is your longer steady run &mdash; <b>keep it conversational pace</b>, not a race effort. It's doing the aerobic-base job the gym days aren't. No lifting today; a 5-minute walk and light stretching afterwards is plenty. Skip this if legs are still trashed from Thursday's session and swap in an easy walk instead &mdash; one missed long run won't undo anything.</span><span class="ja">今週でいちばん長く走る日です。<b>会話ができるくらいのペース</b>を守り、レース気分で追い込まないこと。ジムの日では鍛えられない有酸素の土台づくりが目的です。今日は筋トレなし。走った後は5分のウォーキングと軽いストレッチで十分。前日の疲労で脚が回復していなければ、無理せず軽いウォーキングに置き換えてOK。1回休んでも、これまでの成果がなくなることはありません。</span></p>
   </section>
 
@@ -234,6 +264,16 @@
     <div class="day-head">
       <h2><span class="en">Lower Body B</span><span class="ja">下半身 B</span></h2>
       <span class="tag"><span class="en">Thursday &middot; Glutes &amp; Shape &middot; 50&ndash;60 min</span><span class="ja">木曜日・ヒップ&amp;ボディメイク・50〜60分</span></span>
+    </div>
+    <div class="workout-tracker" data-day="lowerB" data-est-min="55">
+      <button class="start-btn" type="button"><span class="en">Start Workout</span><span class="ja">ワークアウト開始</span></button>
+      <div class="tracker-stats" hidden>
+        <div class="stat"><span class="stat-label"><span class="en">Elapsed</span><span class="ja">経過時間</span></span><span class="stat-val elapsed">0:00</span></div>
+        <div class="stat now-stat"><span class="stat-label"><span class="en">Now</span><span class="ja">現在時刻</span></span><span class="stat-val now">--:--</span></div>
+        <div class="stat est-finish-stat" hidden><span class="stat-label"><span class="en">On track to finish</span><span class="ja">終了予定</span></span><span class="stat-val est-finish">--:--</span></div>
+        <span class="tracker-done-label" hidden><span class="en">Nice work &mdash; workout complete!</span><span class="ja">お疲れさまでした！ワークアウト完了</span></span>
+        <button class="stop-btn" type="button"><span class="en">Reset</span><span class="ja">リセット</span></button>
+      </div>
     </div>
     <p class="day-sub"><span class="en">Warm-up: 5 min skipping + banded lateral walks to switch glutes on.</span><span class="ja">ウォームアップ: 縄跳びを5分+バンドラテラルウォークでお尻を目覚めさせる。</span></p>
     <table>
@@ -301,6 +341,16 @@
     <div class="day-head">
       <h2><span class="en">Upper Body B</span><span class="ja">上半身 B</span></h2>
       <span class="tag"><span class="en">Friday &middot; Pull &middot; 45&ndash;55 min</span><span class="ja">金曜日・プル・45〜55分</span></span>
+    </div>
+    <div class="workout-tracker" data-day="upperB" data-est-min="50">
+      <button class="start-btn" type="button"><span class="en">Start Workout</span><span class="ja">ワークアウト開始</span></button>
+      <div class="tracker-stats" hidden>
+        <div class="stat"><span class="stat-label"><span class="en">Elapsed</span><span class="ja">経過時間</span></span><span class="stat-val elapsed">0:00</span></div>
+        <div class="stat now-stat"><span class="stat-label"><span class="en">Now</span><span class="ja">現在時刻</span></span><span class="stat-val now">--:--</span></div>
+        <div class="stat est-finish-stat" hidden><span class="stat-label"><span class="en">On track to finish</span><span class="ja">終了予定</span></span><span class="stat-val est-finish">--:--</span></div>
+        <span class="tracker-done-label" hidden><span class="en">Nice work &mdash; workout complete!</span><span class="ja">お疲れさまでした！ワークアウト完了</span></span>
+        <button class="stop-btn" type="button"><span class="en">Reset</span><span class="ja">リセット</span></button>
+      </div>
     </div>
     <p class="day-sub"><span class="en">Warm-up: 5 min row or skip + scapular pulls hanging from the bar.</span><span class="ja">ウォームアップ: ローイングか縄跳びを5分+バーにぶら下がってのスキャプラプル。</span></p>
     <table>
@@ -377,6 +427,16 @@
       <h2><span class="en">Parkrun</span><span class="ja">パークラン</span></h2>
       <span class="tag"><span class="en">Saturday &middot; 5km</span><span class="ja">土曜日・5km</span></span>
     </div>
+    <div class="workout-tracker" data-day="parkrun">
+      <button class="start-btn" type="button"><span class="en">Start Workout</span><span class="ja">ワークアウト開始</span></button>
+      <div class="tracker-stats" hidden>
+        <div class="stat"><span class="stat-label"><span class="en">Elapsed</span><span class="ja">経過時間</span></span><span class="stat-val elapsed">0:00</span></div>
+        <div class="stat now-stat"><span class="stat-label"><span class="en">Now</span><span class="ja">現在時刻</span></span><span class="stat-val now">--:--</span></div>
+        <div class="stat est-finish-stat" hidden><span class="stat-label"><span class="en">On track to finish</span><span class="ja">終了予定</span></span><span class="stat-val est-finish">--:--</span></div>
+        <span class="tracker-done-label" hidden><span class="en">Nice work &mdash; workout complete!</span><span class="ja">お疲れさまでした！ワークアウト完了</span></span>
+        <button class="stop-btn" type="button"><span class="en">Reset</span><span class="ja">リセット</span></button>
+      </div>
+    </div>
     <p class="run-body"><span class="en">Run it however you're feeling that week &mdash; easy, steady, or a push if legs are fresh. It doubles as your weekly benchmark; no need to chase a time every single week.</span><span class="ja">その週の調子に合わせて走ればOK。楽に、着実に、脚が元気なら少し追い込んでも構いません。毎週のタイムを更新しようと気負う必要はなく、週ごとの目安として使うくらいで十分です。</span></p>
   </section>
 
@@ -384,6 +444,16 @@
     <div class="day-head">
       <h2><span class="en">Rest / Bonus Day</span><span class="ja">休養日 / ボーナスデー</span></h2>
       <span class="tag"><span class="en">Sunday &middot; Optional &middot; 30&ndash;40 min</span><span class="ja">日曜日・任意・30〜40分</span></span>
+    </div>
+    <div class="workout-tracker" data-day="bonus" data-est-min="35">
+      <button class="start-btn" type="button"><span class="en">Start Workout</span><span class="ja">ワークアウト開始</span></button>
+      <div class="tracker-stats" hidden>
+        <div class="stat"><span class="stat-label"><span class="en">Elapsed</span><span class="ja">経過時間</span></span><span class="stat-val elapsed">0:00</span></div>
+        <div class="stat now-stat"><span class="stat-label"><span class="en">Now</span><span class="ja">現在時刻</span></span><span class="stat-val now">--:--</span></div>
+        <div class="stat est-finish-stat" hidden><span class="stat-label"><span class="en">On track to finish</span><span class="ja">終了予定</span></span><span class="stat-val est-finish">--:--</span></div>
+        <span class="tracker-done-label" hidden><span class="en">Nice work &mdash; workout complete!</span><span class="ja">お疲れさまでした！ワークアウト完了</span></span>
+        <button class="stop-btn" type="button"><span class="en">Reset</span><span class="ja">リセット</span></button>
+      </div>
     </div>
     <p class="day-sub"><span class="en">Take this fully off most weeks. When you want a 5th session, run this light full-body conditioning circuit instead of a fifth heavy lift &mdash; it keeps the &ldquo;4&ndash;5 times a week&rdquo; without stacking fatigue on top of two run days.</span><span class="ja">ほとんどの週はしっかり休んでOKです。5回目のトレーニングをしたい週は、重い種目を追加するのではなく、この軽めの全身コンディショニングサーキットを。ランの日を2日抱えたまま疲労を溜めずに「週4〜5回」を実現できます。</span></p>
     <table>
