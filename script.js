@@ -260,13 +260,20 @@
     trackerTicks[dayId] = tick;
   }
 
-  // ---- celebration: pat flies across the page on check ----
-  function celebrate() {
+  // ---- celebration: pat flies across the page on check, level with the checked row ----
+  function celebrate(anchorEl) {
     var img = document.createElement('img');
     img.src = 'assets/img/pat-head-icon.png';
     img.alt = '';
     img.className = 'flying-pat';
-    img.style.setProperty('--fly-top', (12 + Math.random() * 60) + '%');
+    var top;
+    if (anchorEl) {
+      var rect = anchorEl.getBoundingClientRect();
+      top = rect.top + rect.height / 2 - 28;
+    } else {
+      top = window.innerHeight * (0.12 + Math.random() * 0.6);
+    }
+    img.style.setProperty('--fly-top', top + 'px');
     document.body.appendChild(img);
     img.addEventListener('animationend', function () { img.remove(); });
   }
@@ -281,7 +288,7 @@
           state[k] = box.checked;
           var row = box.closest('tr');
           if (row) row.classList.toggle('done', box.checked);
-          if (box.checked) celebrate();
+          if (box.checked) celebrate(row || box);
           saveChecks();
           if (trackerTicks[dayId]) trackerTicks[dayId]();
         });
