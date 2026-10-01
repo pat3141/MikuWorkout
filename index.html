@@ -171,7 +171,7 @@
       </tbody>
     </table>
     <div class="callout">
-      <div class="thumb thumb-hold"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></div>
+      <button class="thumb thumb-hold thumb-play" type="button" data-ex="Dead_Hang" aria-label="Watch dead hang demo"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></button>
       <div>
         <span class="label"><span class="en">Specialty move &middot; dead hang</span><span class="ja">注目の種目・デッドハング</span></span>
         <p><span class="en">Finish with <b>3 rounds of a dead hang, 20&ndash;40 seconds each</b>, resting a minute between. Shoulders relaxed and slightly engaged (not shrugged to your ears). This is loosening up your lats and grip after all the leg work &mdash; it doesn't need to be exhausting.</span><span class="ja">仕上げに<b>デッドハングを3セット（各20〜40秒）</b>、セット間は1分休憩します。肩はすくめず、軽く締めた状態をキープ。脚のトレーニングのあとに広背筋と握力をほぐすための種目なので、無理に追い込まなくて大丈夫です。</span></p>
@@ -471,7 +471,7 @@
       </tbody>
     </table>
     <div class="callout">
-      <div class="thumb thumb-hold"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></div>
+      <button class="thumb thumb-hold thumb-play" type="button" data-ex="Dead_Hang" aria-label="Watch dead hang demo"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></button>
       <div>
         <span class="label"><span class="en">Specialty move &middot; dead hang</span><span class="ja">注目の種目・デッドハング</span></span>
         <p><span class="en">Finish with <b>4 rounds building toward a 40&ndash;60 second dead hang</b>. This is your main grip-and-shoulder-health day for it &mdash; over a few weeks the hang time should climb, which is the whole point. Chalk or straps are fine once grip becomes the limiter before your shoulders do.</span><span class="ja">仕上げに<b>デッドハングを4セット、40〜60秒を目標に</b>伸ばしていきます。この日がメインの握力・肩ケアの種目なので、数週間かけてぶら下がれる時間が伸びればOK。肩より先に握力がきつくなってきたら、チョークやストラップを使っても構いません。</span></p>
@@ -568,7 +568,7 @@
         </tr>
         <tr>
           <td class="chk-cell"><input type="checkbox" class="chk"></td>
-          <td class="thumb-cell"><div class="thumb thumb-hold"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></div></td>
+          <td class="thumb-cell"><div class="thumb thumb-hold" data-ex="Dead_Hang"><img src="assets/exercises/Hanging_Leg_Raise_0.jpg" alt="" loading="lazy"></div></td>
           <td class="ex"><span class="en">Dead hang</span><span class="ja">デッドハング</span></td>
           <td class="setsreps num"><span class="en">3 &times; max</span><span class="ja">3セット &times; 限界まで</span></td>
           <td class="num"><span class="en">45s</span><span class="ja">45秒</span></td>
@@ -614,7 +614,7 @@
 
   <footer>
     <p><span class="en">Built around her Saturday parkrun and midweek long run &middot; adjust weights and rests to how the week actually feels</span><span class="ja">土曜日のパークランと週半ばのロングランを軸に構成 &middot; 重量や休憩はその週の調子に合わせて調整してください</span></p>
-    <p class="credit"><span class="en">Exercise reference photos: Free Exercise DB (public domain)</span><span class="ja">エクササイズ参考写真: Free Exercise DB（パブリックドメイン）</span></p>
+    <p class="credit"><span class="en">Exercise reference photos: Free Exercise DB (public domain) &middot; Demo clips: MuscleWiki, ExerciseDB</span><span class="ja">エクササイズ参考写真: Free Exercise DB（パブリックドメイン）・デモ動画: MuscleWiki、ExerciseDB</span></p>
   </footer>
 
 </div>
@@ -636,6 +636,22 @@
           <span class="ex-stat"><span class="ex-stat-label"><span class="en">Rest</span><span class="ja">休憩</span></span><span class="ex-stat-val" id="exRest"></span></span>
         </div>
       </div>
+    </div>
+
+    <div class="ex-media" id="exMedia">
+      <button class="ex-media-frame" id="exMediaFrame" type="button" aria-label="View demo full screen">
+        <video id="exVideo" muted loop playsinline preload="metadata"></video>
+        <img id="exGif" alt="" hidden>
+        <span class="ex-media-expand" aria-hidden="true">&#x2922;</span>
+      </button>
+      <div class="ex-media-bar">
+        <div class="ex-view-toggle" id="exViewToggle" role="group" aria-label="Camera angle">
+          <button type="button" data-view="front" aria-pressed="true"><span class="en">Front</span><span class="ja">正面</span></button>
+          <button type="button" data-view="side" aria-pressed="false"><span class="en">Side</span><span class="ja">横</span></button>
+        </div>
+        <a class="ex-video-link" id="exVideoLink" target="_blank" rel="noopener"><span class="en">Form videos</span><span class="ja">フォーム動画</span> &#x2197;</a>
+      </div>
+      <p class="ex-media-note" id="exMediaNote" hidden><span class="en">Demo shows a close variation of this exercise.</span><span class="ja">この種目に近いバリエーションのデモです。</span></p>
     </div>
 
     <div class="ex-section">
@@ -693,6 +709,12 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">&times;</button>
+  <video id="lbVideo" muted loop playsinline controls></video>
+  <img id="lbGif" alt="" hidden>
 </div>
 
 <script src="script.js"></script>

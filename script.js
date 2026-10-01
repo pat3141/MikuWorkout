@@ -354,9 +354,54 @@
     Dumbbell_Bicep_Curl: { primary: ['biceps'], secondary: [] },
     Standing_Cable_Wood_Chop: { primary: ['obliques'], secondary: ['shoulders'] },
     'One-Arm_Kettlebell_Swings': { primary: ['glutes', 'hamstrings'], secondary: ['abs'] },
-    Pushups: { primary: ['chest'], secondary: ['shoulders', 'triceps'] }
+    Pushups: { primary: ['chest'], secondary: ['shoulders', 'triceps'] },
+    Dead_Hang: { primary: ['forearms', 'lats'], secondary: ['shoulders'] }
   };
+
+  // HQ demos: 720p looping MuscleWiki clips (front + side) where one exists,
+  // otherwise an ExerciseDB animated GIF. `similar` = close variation, not the exact move.
+  var MW_BASE = 'https://media.musclewiki.com/media/uploads/videos/branded/';
+  var MW_MODEL = 'female'; // every clip below also exists as 'male'
+  var EDB_BASE = 'https://static.exercisedb.dev/media/';
+  var EXERCISE_MEDIA = {
+    Goblet_Squat: { mw: 'Kettlebells-kettlebell-goblet-squat' },
+    Romanian_Deadlift: { mw: 'Dumbbells-dumbbell-romanian-deadlift' },
+    Bodyweight_Walking_Lunge: { mw: 'Dumbbells-dumbbell-forward-lunge' },
+    Leg_Press: { mw: 'Machine-machine-leg-press' },
+    Seated_Leg_Curl: { mw: 'Machine-machine-seated-leg-curl' },
+    Standing_Calf_Raises: { mw: 'Dumbbells-dumbbell-calf-raise' },
+    Hanging_Leg_Raise: { gif: 'I3tsCnC', similar: true },
+    Dead_Hang: { mw: 'Bodyweight-dead-hang' },
+    Dumbbell_Bench_Press: { gif: 'SpYC0Kp' },
+    Dumbbell_Shoulder_Press: { mw: 'Dumbbells-dumbbell-overhead-press' },
+    Leverage_Incline_Chest_Press: { mw: 'Dumbbells-dumbbell-incline-bench-press', similar: true },
+    Cable_Seated_Lateral_Raise: { mw: 'Cables-cable-lateral-raise' },
+    'Triceps_Pushdown_-_Rope_Attachment': { mw: 'Cables-cable-push-down' },
+    Plank: { mw: 'Bodyweight-forearm-plank' },
+    Push_Up_to_Side_Plank: { gif: 'RKjH6Lt' },
+    Barbell_Hip_Thrust: { mw: 'Barbell-barbell-hip-thrust' },
+    Split_Squat_with_Dumbbells: { mw: 'Dumbbells-dumbbell-bulgarian-split-squat' },
+    Glute_Kickback: { mw: 'Cables-cable-glute-kickback' },
+    Thigh_Abductor: { mw: 'Machine-machine-hip-abduction' },
+    Dumbbell_Step_Ups: { mw: 'Dumbbells-dumbbell-step-up' },
+    'Wide-Grip_Lat_Pulldown': { gif: 'RVwzP10' },
+    Seated_Cable_Rows: { gif: 'fUBheHs' },
+    'One-Arm_Dumbbell_Row': { mw: 'Dumbbells-dumbbell-single-arm-row' },
+    Face_Pull: { mw: 'Band-band-face-pull', similar: true },
+    Dumbbell_Bicep_Curl: { mw: 'Dumbbells-dumbbell-curl' },
+    Standing_Cable_Wood_Chop: { mw: 'Cables-cable-wood-chopper' },
+    'One-Arm_Kettlebell_Swings': { mw: 'Kettlebells-kettlebell-swing' },
+    Pushups: { mw: 'Bodyweight-push-up' }
+  };
+  function mediaSrc(media, view) {
+    if (!media) return null;
+    if (media.mw) return { video: MW_BASE + MW_MODEL + '-' + media.mw + '-' + view + '.mp4' };
+    return { gif: EDB_BASE + media.gif + '.gif' };
+  }
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function exKeyFromThumb(row) {
+    var thumb = row.querySelector('.thumb');
+    if (thumb && thumb.getAttribute('data-ex')) return thumb.getAttribute('data-ex');
     var img = row.querySelector('.thumb img');
     if (!img || !img.getAttribute('src')) return null;
     var m = img.getAttribute('src').match(/assets\/exercises\/(.+)_[01]\.jpg$/);
@@ -371,9 +416,56 @@
   function closeExercise(skipHistory) {
     if (!exOverlay || exOverlay.hidden) return;
     exOverlay.classList.remove('open');
-    setTimeout(function () { exOverlay.hidden = true; }, 280);
+    setTimeout(function () { exOverlay.hidden = true; clearMedia(exVideo, exGif); }, 280);
     if (!skipHistory && history.state && history.state.exOpen) history.back();
   }
+  var exVideo, exGif, exMedia, exView = 'front', exCurrentMedia = null;
+  var lightbox, lbVideo, lbGif;
+  function clearMedia(video, img) {
+    if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
+    if (img) { img.removeAttribute('src'); }
+  }
+  // show a clip/GIF in a <video>/<img> pair; if a clip fails to load, fall back to the GIF or hide
+  function showMedia(video, img, src, autoplay) {
+    if (src && src.video) {
+      img.hidden = true; img.removeAttribute('src');
+      video.hidden = false;
+      video.src = src.video;
+      if (autoplay) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    } else if (src && src.gif) {
+      clearMedia(video, null); video.hidden = true;
+      img.hidden = false; img.src = src.gif;
+    } else {
+      clearMedia(video, img); video.hidden = true; img.hidden = true;
+    }
+  }
+  function renderExMedia() {
+    var media = exCurrentMedia;
+    exMedia.hidden = !media;
+    if (!media) { clearMedia(exVideo, exGif); return; }
+    exMedia.querySelector('.ex-view-toggle').hidden = !media.mw;
+    exMedia.querySelectorAll('.ex-view-toggle button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-view') === exView ? 'true' : 'false');
+    });
+    document.getElementById('exMediaNote').hidden = !media.similar;
+    showMedia(exVideo, exGif, mediaSrc(media, exView), !reduceMotion);
+  }
+  function openLightbox(media, view) {
+    var src = mediaSrc(media, view || 'front');
+    if (!src) return;
+    lightbox.hidden = false;
+    showMedia(lbVideo, lbGif, src, true);
+    requestAnimationFrame(function () { lightbox.classList.add('open'); });
+    document.getElementById('lightboxClose').focus();
+  }
+  function closeLightbox() {
+    if (!lightbox || lightbox.hidden) return false;
+    lightbox.classList.remove('open');
+    lightbox.hidden = true;
+    clearMedia(lbVideo, lbGif);
+    return true;
+  }
+
   function openExercise(row) {
     var exKey = exKeyFromThumb(row);
     var detail = exKey && EXERCISE_DETAILS[exKey];
@@ -409,6 +501,13 @@
       exThumb.classList.add('thumb-hold');
     }
 
+    exCurrentMedia = exKey ? EXERCISE_MEDIA[exKey] || null : null;
+    exView = 'front';
+    renderExMedia();
+    var nameEn = nameCell && nameCell.querySelector('.en');
+    document.getElementById('exVideoLink').href = 'https://www.youtube.com/results?search_query=' +
+      encodeURIComponent((nameEn ? nameEn.textContent : '') + ' proper form');
+
     var primary = detail ? detail.primary : [];
     var secondary = detail ? detail.secondary : [];
     exOverlay.querySelectorAll('.mr-region').forEach(function (shape) {
@@ -436,7 +535,38 @@
     });
     if (exBackBtn) exBackBtn.addEventListener('click', function () { closeExercise(false); });
     window.addEventListener('popstate', function () {
+      closeLightbox();
       if (!exOverlay.hidden) closeExercise(true);
+    });
+
+    exVideo = document.getElementById('exVideo');
+    exGif = document.getElementById('exGif');
+    exMedia = document.getElementById('exMedia');
+    lightbox = document.getElementById('lightbox');
+    lbVideo = document.getElementById('lbVideo');
+    lbGif = document.getElementById('lbGif');
+    exVideo.addEventListener('error', function () { if (exVideo.getAttribute('src')) exMedia.hidden = true; });
+    exMedia.querySelectorAll('.ex-view-toggle button').forEach(function (b) {
+      b.addEventListener('click', function () { exView = b.getAttribute('data-view'); renderExMedia(); });
+    });
+    document.getElementById('exMediaFrame').addEventListener('click', function () {
+      exVideo.pause();
+      openLightbox(exCurrentMedia, exView);
+    });
+    document.getElementById('lightboxClose').addEventListener('click', function () {
+      closeLightbox();
+      if (!exOverlay.hidden && !reduceMotion) exVideo.play().catch(function () {});
+    });
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) document.getElementById('lightboxClose').click();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      if (!lightbox.hidden) document.getElementById('lightboxClose').click();
+      else if (!exOverlay.hidden) closeExercise(false);
+    });
+    document.querySelectorAll('.thumb-play').forEach(function (btn) {
+      btn.addEventListener('click', function () { openLightbox(EXERCISE_MEDIA[btn.getAttribute('data-ex')]); });
     });
   }
 
