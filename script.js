@@ -419,7 +419,7 @@
     setTimeout(function () { exOverlay.hidden = true; clearMedia(exVideo, exGif); }, 280);
     if (!skipHistory && history.state && history.state.exOpen) history.back();
   }
-  var exVideo, exGif, exMedia, exView = 'front', exCurrentMedia = null;
+  var exVideo, exGif, exMedia, exPlay, exView = 'front', exCurrentMedia = null;
   var lightbox, lbVideo, lbGif;
   function clearMedia(video, img) {
     if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
@@ -430,8 +430,14 @@
     if (src && src.video) {
       img.hidden = true; img.removeAttribute('src');
       video.hidden = false;
-      video.src = src.video;
-      if (autoplay) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+      // iOS only autoplays when muted is set as a property too; #t nudges it to paint the first frame
+      video.muted = true; video.defaultMuted = true;
+      video.src = src.video + '#t=0.001';
+      if (autoplay) {
+        var p = video.play();
+        // Low Power Mode / data saver block autoplay: show a play badge, a tap opens the full-screen player
+        if (p && p.catch) p.catch(function () { if (video === exVideo) exPlay.hidden = false; });
+      }
     } else if (src && src.gif) {
       clearMedia(video, null); video.hidden = true;
       img.hidden = false; img.src = src.gif;
@@ -441,6 +447,7 @@
   }
   function renderExMedia() {
     var media = exCurrentMedia;
+    exPlay.hidden = !(media && media.mw && reduceMotion);
     exMedia.hidden = !media;
     if (!media) { clearMedia(exVideo, exGif); return; }
     exMedia.querySelector('.ex-view-toggle').hidden = !media.mw;
@@ -542,6 +549,8 @@
     exVideo = document.getElementById('exVideo');
     exGif = document.getElementById('exGif');
     exMedia = document.getElementById('exMedia');
+    exPlay = document.getElementById('exMediaPlay');
+    exVideo.addEventListener('playing', function () { exPlay.hidden = true; });
     lightbox = document.getElementById('lightbox');
     lbVideo = document.getElementById('lbVideo');
     lbGif = document.getElementById('lbGif');
@@ -549,9 +558,13 @@
     exMedia.querySelectorAll('.ex-view-toggle button').forEach(function (b) {
       b.addEventListener('click', function () { exView = b.getAttribute('data-view'); renderExMedia(); });
     });
-    document.getElementById('exMediaFrame').addEventListener('click', function () {
+    var exFrame = document.getElementById('exMediaFrame');
+    exFrame.addEventListener('click', function () {
       exVideo.pause();
       openLightbox(exCurrentMedia, exView);
+    });
+    exFrame.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); exFrame.click(); }
     });
     document.getElementById('lightboxClose').addEventListener('click', function () {
       closeLightbox();
